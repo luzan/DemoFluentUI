@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Components
+@using BlazorFluentUI.Themes.Default
+@inherits LayoutComponentBase
+
+<header>
+    <IconButton IconName="WaffleOffice365" id="btnAppIcon" OnClick="@(() => panelOpen=true )"></IconButton>
+    Header
+</header>
+<main>
+    @Body
+</main>
+
+<Panel IsOpen=@panelOpen
+       OnDismiss=@(() => panelOpen = !panelOpen)
+       Type=@PanelType.SmallFixedNear
+       IsLightDismiss="true"
+       HeaderText="Light Dismiss Panel">
+    <p>
+        This is a light dismiss panel...
+    </p>
+</Panel>
+
+@code {
+    bool panelOpen;
+}
